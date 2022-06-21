@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour {
 
         // Debug
         Color color = hitGround ? Color.red : Color.green;
-        Debug.DrawRay(rayPointGround.position, Vector2.down * lengthGround, color);
+        // Debug.DrawRay(rayPointGround.position, Vector2.down * lengthGround, color);
 
         return hitGround;
     }
@@ -57,14 +57,14 @@ public class Enemy : MonoBehaviour {
 
         // Debug
         Color color = hitWall ? Color.yellow : Color.blue;
-        Debug.DrawRay(rayPointWall.position, Vector2.right * direction * lengthWall, color);
+        // Debug.DrawRay(rayPointWall.position, Vector2.right * direction * lengthWall, color);
 
         return hitWall;
     }
 
     protected void GetDistancePlayer() {
         playerDistance = player.position.x - transform.position.x;
-        Debug.Log(playerDistance);
+        // Debug.Log(playerDistance);
     }
 
 }

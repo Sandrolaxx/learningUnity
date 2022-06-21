@@ -22,9 +22,9 @@ public class BulletEnemy : Bullet {
             
             health.AddDamage(damage);
             
-            // if (health.health == 0) {
-            //     // GameManager.isGameOver = true;
-            // }
+            if (health.health == 0) {
+                // GameManager.isGameOver = true;
+            }
 
             Explode();
         }
