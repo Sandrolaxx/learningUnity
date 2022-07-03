@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour {
         player = FindObjectOfType<Player>().transform;
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-        direction = (int)transform.localScale.x;
+        direction = (int)transform.localScale.y;
     }
 
     protected virtual void Update() {

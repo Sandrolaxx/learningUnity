@@ -102,7 +102,12 @@ public class Player : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        // animator.setTrigger("die");
+
+        if (GameManager.isGameOver) {
+            animator.SetTrigger("die");
+            return;
+        }
+
         animator.SetFloat("xVelocity", Mathf.Abs(xVelocity));
         animator.SetFloat("yVelocity", rb2d.velocity.y);
         animator.SetBool("isGrounded", isGrounded);

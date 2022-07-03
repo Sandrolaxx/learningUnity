@@ -20,13 +20,22 @@ public class BulletEnemy : Bullet {
         if (collision.CompareTag("Player")) {
             Health health = collision.GetComponent<Health>();
             
-            health.AddDamage(damage);
+            if (health == null) {
+                return;
+            }
             
-            if (health.health == 0) {
-                // GameManager.isGameOver = true;
+            if (!GameManager.isGameOver) {
+                health.AddDamage(damage);
+                UIManager.UpdateLifeUI(health.health);
             }
 
             Explode();
+
+            if (health.health == 0) {
+                GameManager.isGameOver = true;
+                GameManager.PlayerDie();
+            }
+            
         }
         
         if (collision.CompareTag("Ground")) {
